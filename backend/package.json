@@ -1,0 +1,14 @@
+{
+  "name": "viton-id-backend",
+  "version": "0.1.0",
+  "description": "VITON ID authentication & identity core service",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
