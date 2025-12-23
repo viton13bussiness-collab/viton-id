@@ -7,7 +7,8 @@ const PORT = process.env.PORT || 3000;
 
 /* ================= MIDDLEWARE ================= */
 app.use(express.json());
-
+// ROUTES
+app.use("/auth", authRoutes);
 /* ================= HEALTH CHECK ================= */
 app.get("/", (req, res) => {
   res.json({
