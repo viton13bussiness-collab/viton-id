@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VITON13 — T123 Block</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --ink: #111216;
+      --muted: #6f7682;
+      --line: rgba(20, 28, 44, 0.1);
+      --pill: rgba(255, 255, 255, 0.88);
+      --blue: #5ba7ff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 65% 35%, #ffffff 0%, var(--bg) 58%, #f0f2f5 100%);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Manrope", "Segoe UI", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 28px 24px 36px;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto auto 1fr auto;
+      gap: 18px;
+    }
+
+    .nav {
+      width: fit-content;
+      margin: 0 auto;
+      border-radius: 16px;
+      padding: 8px;
+      background: var(--pill);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 6px 30px rgba(33, 44, 67, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: #2d3440;
+      border: 1px solid var(--line);
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .menu {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #373e4a;
+      padding: 9px 16px;
+      border-radius: 10px;
+      font-size: 15px;
+      transition: 0.2s ease;
+    }
+
+    .menu a:hover { background: rgba(61, 85, 124, 0.08); }
+
+    .announce {
+      margin: 0 auto;
+      font-size: 13px;
+      color: #7b8391;
+      border: 1px solid rgba(130, 142, 165, 0.22);
+      border-radius: 999px;
+      padding: 7px 14px;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .announce i {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1px solid rgba(91, 167, 255, 0.6);
+      color: #488fdd;
+      display: grid;
+      place-items: center;
+      font-style: normal;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      align-items: center;
+      padding-top: 20px;
+      min-height: 520px;
+    }
+
+    .left small {
+      display: block;
+      font-size: 33px;
+      font-weight: 700;
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      background: linear-gradient(95deg, #1d2a43 15%, #4f79b8 50%, #95b8ed 85%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .left h1 {
+      margin: 0;
+      font-weight: 500;
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1.02;
+      max-width: 340px;
+    }
+
+    .left p {
+      margin-top: 14px;
+      font-size: 26px;
+      color: #1d232d;
+      font-weight: 500;
+    }
+
+    .chips {
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      color: #9197a2;
+      font-size: 20px;
+    }
+
+    .chip {
+      border: 1px solid rgba(91, 167, 255, 0.45);
+      color: #4a88d8;
+      border-radius: 999px;
+      padding: 5px 11px;
+      background: rgba(255, 255, 255, 0.8);
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .head-zone {
+      position: relative;
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+      overflow: visible;
+    }
+
+    .head {
+      width: min(560px, 95%);
+      aspect-ratio: 1/1;
+      border-radius: 45% 55% 48% 52% / 42% 44% 56% 58%;
+      background:
+        radial-gradient(circle at 26% 30%, rgba(255, 255, 255, 0.7), rgba(255,255,255,0) 34%),
+        radial-gradient(circle at 70% 20%, rgba(128, 168, 245, 0.38), rgba(49, 62, 106, 0.08) 52%),
+        radial-gradient(circle at 50% 70%, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.02) 66%),
+        linear-gradient(145deg, #f9fbff 2%, #d6dff0 32%, #97a8c8 60%, #dfe7f7 95%);
+      filter: drop-shadow(0 48px 88px rgba(45, 59, 86, 0.28));
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 60px;
+    }
+
+    .head::after {
+      content: "";
+      position: absolute;
+      inset: 44% 12% -22% 12%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 5%, rgba(246, 248, 252, 0.95), rgba(246, 248, 252, 0));
+      filter: blur(14px);
+    }
+
+    .brand {
+      position: relative;
+      z-index: 2;
+      font-size: clamp(62px, 8vw, 104px);
+      line-height: 0.95;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #f9fbff;
+      text-shadow: 0 2px 0 rgba(255,255,255,0.24), 0 24px 42px rgba(13, 26, 46, 0.36);
+    }
+
+    .welcome {
+      margin-top: 10px;
+      font-size: clamp(20px, 2.2vw, 32px);
+      color: #edf4ff;
+      font-weight: 500;
+      text-shadow: 0 8px 16px rgba(19, 29, 48, 0.28);
+    }
+
+    .times {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .time-card {
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px 16px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 24px rgba(23, 33, 52, 0.08);
+    }
+
+    .time-card h3 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: #6f7784;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .time-card b {
+      margin-top: 6px;
+      display: block;
+      font-size: 28px;
+      line-height: 1;
+      font-weight: 700;
+      color: #111827;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .left h1,
+      .left p,
+      .chips { margin-left: auto; margin-right: auto; }
+      .times { grid-template-columns: repeat(2, minmax(150px, 1fr)); }
+    }
+
+    @media (max-width: 560px) {
+      .menu a { padding: 8px 10px; font-size: 13px; }
+      .times { grid-template-columns: 1fr; }
+      .left small { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="nav">
+      <div class="logo">✶</div>
+      <nav class="menu">
+        <a href="#">Wearable</a>
+        <a href="#">Neural</a>
+        <a href="#">Programs</a>
+        <a href="#">Updates</a>
+        <a href="#">Search</a>
+      </nav>
+    </header>
+
+    <div class="announce">Discover more about our latest updates. <i>→</i></div>
+
+    <section class="hero">
+      <div class="left">
+        <small>VITON13</small>
+        <h1>Enhancement of<br>human experience.</h1>
+        <p>Добро пожаловать</p>
+        <div class="chips">
+          <span>Explore</span>
+          <span class="chip">A'I Sense</span>
+          <span class="chip">B'I Eye</span>
+          <span class="chip">A'I Neuro</span>
+        </div>
+      </div>
+
+      <div class="head-zone">
+        <div class="head">
+          <div>
+            <div class="brand">VITON13</div>
+            <div class="welcome">Добро пожаловать</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="times">
+      <article class="time-card"><h3>Испания</h3><b id="time-spain">--:--:--</b></article>
+      <article class="time-card"><h3>ОАЭ</h3><b id="time-uae">--:--:--</b></article>
+      <article class="time-card"><h3>Россия</h3><b id="time-russia">--:--:--</b></article>
+      <article class="time-card"><h3>Америка</h3><b id="time-usa">--:--:--</b></article>
+    </section>
+  </main>
+
+  <script>
+    const clocks = [
+      { id: 'time-spain', tz: 'Europe/Madrid' },
+      { id: 'time-uae', tz: 'Asia/Dubai' },
+      { id: 'time-russia', tz: 'Europe/Moscow' },
+      { id: 'time-usa', tz: 'America/New_York' }
+    ];
+
+    const formatTime = (timezone) => new Intl.DateTimeFormat('ru-RU', {
+      hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: timezone
+    }).format(new Date());
+
+    function updateClock() {
+      clocks.forEach(({ id, tz }) => {
+        const target = document.getElementById(id);
+        if (target) target.textContent = formatTime(tz);
+      });
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+  </script>
+</body>
+</html>
